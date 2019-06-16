@@ -2,7 +2,12 @@
 Phraser for Processing - old version
 read only
 
-## dependency
+## directories
+- htdocs: Web application includes JAR
+- Phaser: 
+
+
+## dependencies
 [controlP5](http://www.sojamo.de/libraries/controlP5/) - a gui library for the programming environment processing
 
 ## deploy
