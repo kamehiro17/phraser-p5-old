@@ -8,7 +8,8 @@ read only
 
 
 ## dependencies
-[controlP5](http://www.sojamo.de/libraries/controlP5/) - a gui library for the programming environment processing
+[controlP5](http://www.sojamo.de/libraries/controlP5/) - a GUI library for the programming environment Processing
+Ess(no longer avilable) - a sound library for Processing 
 
 ## deploy
 1. build on P5
