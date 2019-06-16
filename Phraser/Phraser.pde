@@ -1,8 +1,8 @@
 import krister.Ess.*;
 import controlP5.*;
-import netscape.javascript.*;
+//import netscape.javascript.*;
 
-JSObject js;
+//JSObject js;
 AudioChannel myChannel, ch1, ch2; // Create channel
 SawtoothWave Saw; // Create Sawtooth waveform
 SineWave Sin;
@@ -20,7 +20,7 @@ AGraph EnvG1, EnvG2, SeqG;
 ControlP5 ctrl;
 Slider LP1, LP2, HP1, HP2, Vol1, Vol2, gateS;
 Knob QF1, QF2, QG1, QG2, QQ1, QQ2;
-Radio WSwitch1, WSwitch2, SSwitch;
+RadioButton WSwitch1, WSwitch2, SSwitch;
 Controller Play, Stop, Reset, Random1, Random2, RToggle;
 
 int noteDuration = 500; // Duration of each note in milliseconds
@@ -44,11 +44,11 @@ void setup(){
   Sqr = new SquareWave(0, 0.1);
   Noise = new WhiteNoise(0.1);
   pFFT = new FFT(512);
-  try{
-    js = JSObject.getWindow(this);
-  }catch(Exception e){
-    println("Error: Cannot get window object " +  e.getMessage());
-  }
+  //try{
+  //  js = JSObject.getWindow(this);
+  //}catch(Exception e){
+  //  println("Error: Cannot get window object " +  e.getMessage());
+  //}
 
   defaultImage();
 }

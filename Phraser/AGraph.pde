@@ -80,7 +80,7 @@ class AGraph {
           break;
         case(1):
           noStroke();
-          rect(cWidth * i + 1, val[i] / (maxVal - minVal) * ySize - ySize / (maxVal - minVal) / 2, cWidth * Gate.value(), ySize / (maxVal - minVal));
+          rect(cWidth * i + 1, val[i] / (maxVal - minVal) * ySize - ySize / (maxVal - minVal) / 2, cWidth * Gate.getValue(), ySize / (maxVal - minVal));
           break;
       }
     }

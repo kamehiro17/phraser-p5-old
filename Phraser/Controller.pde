@@ -3,24 +3,27 @@ void setControllers(){
   ctrl.setColorBackground(0xffB0B0B0);
   ctrl.setColorForeground(0xff999988);
   ctrl.setColorActive(0xff888855);
-  ctrl.setColorLabel(0xdd000000);
-  ctrl.setColorValue(0x00CCCCCC);
+  //ctrl.setColorLabel(0xdd000000);
+  //ctrl.setColorValue(0x00CCCCCC);
+  ctrl.setColorValueLabel(0x00CCCCCC);
 
   WSwitch1 = ctrl.addRadio("WaveSwitch1", 20, 15);
   WSwitch1.setColorForeground(0xffB0B0B0);
   WSwitch1.setColorActive(0xdd998800);
-  WSwitch1.setLabelVisible(false);
-  WSwitch1.add("Saw", 0);
-  WSwitch1.add("Sin", 1);
-  WSwitch1.add("Sqr", 2);
+  //WSwitch1.setLabelVisible(false);
+  WSwitch1.addItem("Saw1", 0);
+  WSwitch1.addItem("Sin1", 1);
+  WSwitch1.addItem("Sqr1", 2);
+  WSwitch1.activate(0);
 
   WSwitch2 = ctrl.addRadio("WaveSwitch2", 55, 15);
   WSwitch2.setColorForeground(0xffB0B0B0);
   WSwitch2.setColorActive(0xdd6B8E23);
-  WSwitch2.add("Saw", 0);
-  WSwitch2.add("Sin", 1);
-  WSwitch2.add("Sqr", 2);
-  WSwitch2.add("Noise", 3);
+  WSwitch2.addItem("Saw2", 0);
+  WSwitch2.addItem("Sin2", 1);
+  WSwitch2.addItem("Sqr2", 2);
+  WSwitch2.addItem("Noise2", 3);
+  WSwitch2.activate(1);
 
   Vol1 = ctrl.addSlider("Vol1", 0, 0.5, 0.5, 15, 80, 15, 80);
   Vol1.setColorBackground(0xffB0B0B0);
@@ -57,45 +60,45 @@ void setControllers(){
   EnvG1 = new AGraph(EArray1, 0, 40, 80, 180, 80, 0, 2);
   EnvG2 = new AGraph(EArray2, 0, 40, 170, 180, 80, 0, 2);
 
-  LP1 = ctrl.addSlider("LowPass(HighCut)", 1500, 22000, 22000, 230, 85, 20, 120);
+  LP1 = ctrl.addSlider("LowPass(HighCut)1", 1500, 22000, 22000, 230, 85, 20, 120);
   LP1.setColorBackground(0xffB0B0B0);
   LP1.setColorForeground(0xff94822E);
   LP1.setColorActive(0xff94822E);
   LP1.setLabelVisible(false);
 
-  HP1 = ctrl.addSlider("HighPass(LowCut)", 15, 1500, 15, 230, 205, 20, 120);
+  HP1 = ctrl.addSlider("HighPass(LowCut)1", 15, 1500, 15, 230, 205, 20, 120);
   HP1.setColorBackground(0xff94822E);
   HP1.setColorForeground(0xffB0B0B0);
   HP1.setColorActive(0xffB0B0B0);
   HP1.setLabelVisible(false);
 
-  LP2 = ctrl.addSlider("LowPass(HighCut)", 1500, 22000, 22000, 260, 85, 20, 120);
+  LP2 = ctrl.addSlider("LowPass(HighCut)2", 1500, 22000, 22000, 260, 85, 20, 120);
   LP2.setColorBackground(0xffB0B0B0);
   LP2.setColorForeground(0xff73903E);
   LP2.setColorActive(0xff73903E);
   LP2.setLabelVisible(false);
 
-  HP2 = ctrl.addSlider("HighPass(LowCut)", 15, 1500, 15, 260, 205, 20, 120);
+  HP2 = ctrl.addSlider("HighPass(LowCut)2", 15, 1500, 15, 260, 205, 20, 120);
   HP2.setColorBackground(0xff73903E);
   HP2.setColorForeground(0xffB0B0B0);
   HP2.setColorActive(0xffB0B0B0);
   HP2.setLabelVisible(false);
 
-  QF1 = ctrl.addKnob("EqFreq", 15, 22000, 2000, 30, 260, 30);
-  QG1 = ctrl.addKnob("EqGain", 0, 48, 24, 102, 260, 30);
-  QQ1 = ctrl.addKnob("EqQ", 1, 11, 5, 175, 260, 30);
+  QF1 = ctrl.addKnob("EqFreq1", 15, 22000, 2000, 30, 260, 30);
+  QG1 = ctrl.addKnob("EqGain1", 0, 48, 24, 102, 260, 30);
+  QQ1 = ctrl.addKnob("EqQ1", 1, 11, 5, 175, 260, 30);
 
-  QF2 = ctrl.addKnob("EqFreq", 15, 22000, 2000, 30, 300, 30);
-  QG2 = ctrl.addKnob("EqGain", 0, 48, 24, 102, 300, 30);
-  QQ2 = ctrl.addKnob("EqQ", 1, 11, 5, 175, 300, 30);
+  QF2 = ctrl.addKnob("EqFreq2", 15, 22000, 2000, 30, 300, 30);
+  QG2 = ctrl.addKnob("EqGain2", 0, 48, 24, 102, 300, 30);
+  QQ2 = ctrl.addKnob("EqQ2", 1, 11, 5, 175, 300, 30);
 
   SSwitch = ctrl.addRadio("SongSwitch", 10, 380);
   SSwitch.setColorForeground(0xffB0B0B0);
   SSwitch.setColorActive(0xddAAAA66);
-  SSwitch.add("KAERU", 0);
-  SSwitch.add("SAKURA", 1);
-  SSwitch.add("DOREMI", 2);
-  SSwitch.add("HOTARU", 3);
+  SSwitch.addItem("KAERU", 0);
+  SSwitch.addItem("SAKURA", 1);
+  SSwitch.addItem("DOREMI", 2);
+  SSwitch.addItem("HOTARU", 3);
   
   RToggle = ctrl.addToggle("Toggle", false, 7, 450, 20, 20);
   RToggle.setColorActive(0xddD5CC43);
@@ -195,7 +198,7 @@ void Play(float theValue){
   } else {
     myChannel.play();
   }
-  js.call("setData", dummy);
+  //js.call("setData", dummy);
 }
 
 void Stop(float theValue){

@@ -2,9 +2,9 @@ void prepareChannel(AudioChannel Channel, Slider LP, Slider HP, Knob QF, Knob QG
   Channel.initChannel(Channel.frames(Seq.length * noteDuration));
   
   myNM = new Normalize();
-  myLP = new LowPass(LP.value(), -24, 16); //Freq, gain, q-sharpness
-  myHP = new HighPass(HP.value(), -24, 16); //Freq, gain, q-sharpness
-  myEQ = new EQ(QF.value(), QG.value()-24, QQ.value());
+  myLP = new LowPass(LP.getValue(), -24, 16); //Freq, gain, q-sharpness
+  myHP = new HighPass(HP.getValue(), -24, 16); //Freq, gain, q-sharpness
+  myEQ = new EQ(QF.getValue(), QG.getValue()-24, QQ.getValue());
 
 }  
 
@@ -20,7 +20,7 @@ void createChannelData(AudioChannel Channel, int waveForm, float[] EArray, AGrap
     myEnv.points = setEnvelopePoints(EArray, EnvG);
       for(int i = 0, note = 0, time = 0; i < Seq.length; i++, note++, time += noteDuration){ // Repeat number of steps
         int begin = Channel.frames(time); // Starting position within Channel
-        int e = int(noteDuration * Gate.value()); // length of each note
+        int e = int(noteDuration * Gate.getValue()); // length of each note
         int end = Channel.frames(e); // Ending position with Channel
         switch(waveForm){
           case(0):
@@ -45,7 +45,7 @@ void createChannelData(AudioChannel Channel, int waveForm, float[] EArray, AGrap
   myLP.filter(Channel); // Apply LPF
   myHP.filter(Channel); // Apply HPF
   myEQ.filter(Channel); // Apply EQ
-  myNM.filter(Channel, Vol.value()); // Apply Normalize
+  myNM.filter(Channel, Vol.getValue()); // Apply Normalize
 }
 
 void synthesis(AudioChannel PlayCh, AudioChannel ch1, AudioChannel ch2){
