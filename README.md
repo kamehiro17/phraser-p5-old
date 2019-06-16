@@ -13,4 +13,4 @@ Ess(no longer avilable) - a sound library for Processing
 
 ## deploy
 1. build on P5
-2. copy `applet/*.jar` files into `htdocs`
+2. copy `applet/*.jar` files into `docs`
